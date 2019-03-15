@@ -1,0 +1,41 @@
+.bar {
+    background: url("prism.png"); /* Background pattern from Toptal Subtle Patterns */
+    border-top: 0.1em solid rgba(0, 0, 0, .1);
+    border-bottom: 0.1em solid rgba(0, 0, 0, .1);
+    height: 2.2em;
+    margin-bottom: 2em;
+}
+
+.main-nav {
+    background: url("prism.png"); /* Background pattern from Toptal Subtle Patterns */
+    border-top: 0.1em solid rgba(0, 0, 0, .1);
+    border-bottom: 0.1em solid rgba(0, 0, 0, .1);
+    height: 2.2em;
+    margin-bottom: 2em;
+}
+
+.main-nav ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.main-nav li + li {
+    border-left: 0.1em solid #fff;
+}
+
+.main-nav a {
+    display: block;
+    height: 2em;
+    line-height: 2em;
+    width: 10em;
+    color: #fff;
+}
+
+.main-nav a:hover {
+    text-decoration: none;
+    background-color: rgba(255,255,255, .1);
+}

@@ -1,0 +1,117 @@
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.links a {
+    color: #000;
+}
+
+.links a:hover {
+    text-decoration: none;
+}
+
+.links-group {
+    height: 17em;
+    width: 17em;
+    margin: 1em 0.5em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.block-small {
+    width: 8em;
+    height: 8em;
+    text-align: center;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 0.2em solid rgb(156, 156, 156);
+    background: repeating-linear-gradient(135deg,
+        #f1f1f1,
+        #f1f1f1 1.13em,
+        #e1e1e1 1.13em,
+        #e1e1e1 2.26em
+    );
+}
+
+.links i {
+    font-size: 4em;
+}
+
+.block-small {
+    margin: 0 0.2em;
+}
+
+.links .desc {
+    background-color: #fff;
+    width: 100%;
+}
+
+.block-big {
+    width: 17em;
+    height: 5em;
+    text-align: center;
+    border: 0.2em solid rgb(156, 156, 156);
+    background: repeating-linear-gradient(135deg,
+        #f1f1f1,
+        #f1f1f1 1.13em,
+        #e1e1e1 1.13em,
+        #e1e1e1 2.26em
+    );
+}
+
+.block-big i {
+    float: left;
+    margin: 0.05em;
+}
+
+.create:hover, .other:hover {
+    background: repeating-linear-gradient(135deg,
+        #f1f1f1,
+        #f1f1f1 1.13em,
+        #b2f5b0 1.13em,
+        #b2f5b0 2.26em
+    );
+}
+
+.open:hover, .guide:hover {
+    background: repeating-linear-gradient(135deg,
+        #f1f1f1,
+        #f1f1f1 1.13em,
+        #b0dff5 1.13em,
+        #b0dff5 2.26em
+    );
+}
+
+.edit:hover {
+    background: repeating-linear-gradient(135deg,
+        #f1f1f1,
+        #f1f1f1 1.13em,
+        #e2b97b 1.13em,
+        #e2b97b 2.26em
+    );
+}
+
+.help:hover {
+    background: repeating-linear-gradient(135deg,
+        #f1f1f1,
+        #f1f1f1 1.13em,
+        #f5b0bf 1.13em,
+        #f5b0bf 2.26em
+    );
+}
+
+.dropbox:hover {
+    background: repeating-linear-gradient(135deg,
+        #f1f1f1,
+        #f1f1f1 1.13em,
+        rgb(0, 98, 255) 1.13em,
+        rgb(0, 98, 255) 2.26em
+    );
+}
