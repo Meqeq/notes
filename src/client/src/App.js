@@ -3,37 +3,32 @@ import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import './styles/bootstrap-reboot.min.css';
-import './styles/main.css';
+import './styles/layout.css';
 
-import request from './modules/request';
+import { logged } from './actions/userActions'; 
 
-import Nav from './components/Nav';
-import HomeMenu from './components/HomeMenu';
+import Menu from './components/Menu';
 
 class App extends Component {
     componentDidMount() {
-        request("/api/logged").then( res => {
-            console.log(res);
-        })
+        this.props.loginAction();
     }
 
     render() {
-        return (
+        return(
             <Router>
-                <React.Fragment>
+                <div className="wrapper">
                     <header>
-                        <i className="far fa-sticky-note" />
                         <span>NOTES</span>
                     </header>
+                    <Menu />
                     <main>
-                        <h4>Zabierz swoje notatki wszędzie</h4>
-                        <Nav />
-                        <Route exact path="/" component={ HomeMenu } />
+                        Michał Kozik nie ma pleców
                     </main>
                     <footer>
                         Notes by MeqeqWengiel | Krk 2019
                     </footer>
-                </React.Fragment>
+                </div>
             </Router>
         );
     }
@@ -43,6 +38,10 @@ const mapStateToProps = state => ({
     windowOpen: state.window.open,
     componentName: state.window.component
 });
+
+const mapActionsToProps = {
+    loginAction: logged
+}
   
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, mapActionsToProps)(App);
   

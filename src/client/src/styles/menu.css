@@ -1,0 +1,122 @@
+nav {
+    grid-area: nav;
+    background-color: rgb(11, 13, 26);
+    color: #fff;
+    padding: 1em;
+    position: absolute;
+    top: 3em;
+    left: -9.5em;
+    z-index: 20;
+    height: calc(100vh - 4.5em);
+    transition: 0.3s left ease-in-out;
+    overflow: auto;
+}
+
+@keyframes loading{
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-icon {
+    color: #fff;
+    position: absolute;
+    right: 0.5em;
+    top: 0.5em;
+    font-size: 2em;
+    animation: loading 1s ease-in-out infinite;
+}
+
+nav .kek {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3.5em;
+    height: 100%;
+    z-index: 50;
+    transition: 0.05s z-index ease-in-out;
+}
+
+nav:hover .kek {
+    z-index: -1;
+}
+
+nav a {
+    color: #fff;
+}
+
+.loaded a:hover {
+    color: #d9d9d9;
+}
+
+nav > div:first-of-type {
+    border-bottom: 0.3em double #fff;
+    padding-right: 2em;
+    margin-bottom: 1em;
+    display: inline-block;
+}
+
+.loaded:hover {
+    left: 0em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav .submenu {
+    font-weight: 200;
+    font-family: 'Raleway', sans-serif;
+    margin: 0.5em 0;
+    border-bottom: 0.1em solid rgba(255, 255, 255, .1);
+    width: 8em;
+}
+
+.menu-item > div {
+    float: left;
+    margin: 0.3em 0;
+}
+
+.menu-item > div:first-child{
+    width: 8em;
+    height: 2em;
+    line-height: 2em;
+}
+
+.menu-item .icon {
+    width: 3.2em;
+    text-align: center;
+    border-right: 0.2em solid transparent;
+    height: 2em;
+    line-height: 2em;
+    padding-left: 1em;
+}
+
+.loaded .active .icon {
+    border-right-color: rgb(30, 76, 204);
+}
+
+.menu-item i {
+    font-size: 1.2em;
+}
+
+.loading a{
+    color: rgb(11, 13, 26);
+}
+
+.dropbox-account {
+    line-height: 1;
+}
+
+.dropbox-account .name {
+    font-size: 0.8em;
+}
+
+.dropbox-account .display-name {
+    font-size: 0.6em;
+}
+

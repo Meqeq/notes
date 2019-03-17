@@ -4,6 +4,12 @@ const keys = require("../config/secrets");
 const appCfg = require("../config/app");
 const crypto = require('crypto-promise');
 const request = require("request-promise");
+const dc = require("../controllers/dropbox");
+
+router.get("*", (req, res, next) => {
+    req.session.token = "JD4f5lB5fNAAAAAAAAAFq4WOLSb4tP1EIb6JTksey4I2A_7Orbj0yr3N9aA_bare";
+    next();
+});
 
 /* Sends user to dropbox authorization page */
 router.get("/login", (req, res) => {
@@ -43,10 +49,7 @@ router.get("/callback", async (req, res) => {
     }
 });
 
-router.get("/logged", (req, res) => {
-    if(typeof req.session.token == "string") res.json({ logged: true });
-    else res.json({ logged: false });
-});
+router.get("/logged", dc.logged);
 
 
 module.exports = router;
