@@ -8,6 +8,11 @@ import './styles/layout.css';
 import { logged } from './actions/userActions'; 
 
 import Menu from './components/Menu';
+import Window from './components/Window';
+
+import Create from './pages/Create';
+import Overview from './pages/Overview';
+import Open from './pages/Open';
 
 class App extends Component {
     componentDidMount() {
@@ -18,12 +23,15 @@ class App extends Component {
         return(
             <Router>
                 <div className="wrapper">
+                    <Window />
                     <header>
                         <span>NOTES</span>
                     </header>
                     <Menu />
                     <main>
-                        Michał Kozik nie ma pleców
+                        <Route path="/create" component={ Create } />
+                        <Route path="/overview" component={ Overview } />
+                        <Route path="/open" component={ Open } />
                     </main>
                     <footer>
                         Notes by MeqeqWengiel | Krk 2019

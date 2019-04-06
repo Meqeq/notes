@@ -1,0 +1,243 @@
+.files-explorer {
+    & {
+        width: 80%;
+        background-color: rgb(30, 76, 204);
+        margin: 1em auto;
+    }
+
+    .header {
+        background-color: rgb(11, 13, 26);
+        padding: 0.5em;
+        display: flex;
+    }
+
+    .path {
+        background-color: rgb(88, 89, 102);
+        height: 2em;
+        line-height: 2em;
+        padding: 0 0.3em;
+        width: 40%;
+    }
+
+    .options {
+        & {
+            text-align: center;
+            width: 100%;
+            line-height: 2em;
+        }
+        .option {
+            display: inline-block;
+            margin: 0 0.5em;
+            background-color: #fff;
+            height: 2em;
+            width: 2em;
+            color: #000;
+            border-radius: 0.1em;
+            cursor: pointer;
+        }
+    }
+
+    .loading {
+        margin: 1em auto;
+        height: 2em;
+        line-height: 2em;
+        text-align: center;
+        border-radius: 0.1em;
+        background-color: #fff;
+        color: #000;
+        width: 10em;
+    }
+
+    .files-wrapper {
+        width: 100%;
+        position: relative;
+    }
+
+    .new-folder {
+        & {
+            width: 15em;
+            height: 3em;
+            padding: 0.5em;
+            text-align: center;
+            background-color: #fff;
+            color: #000;
+            margin: 1em auto;
+        }
+        input {
+            width: 14em;
+            border: 0;
+            border-bottom: 0.1em solid #e2e2e2;
+            padding-left: 0.3em;
+            height: 2em;
+            line-height: 2em;
+        }
+    }
+
+    .delete {
+        & {
+            width: 15em;
+            padding: 0.5em;
+            text-align: center;
+            background-color: #fff;
+            color: #000;
+        }
+
+        .complete {
+            width: 100%;
+            height: 2em;
+            line-height: 2em;
+            margin-top: 0.5em;
+            background-color: rgb(165, 44, 44);
+            color: #fff;
+        }
+    }
+
+    .files {
+        & {
+            max-height: 18em;
+            min-height: 6em;
+            width: 100%;
+            padding: 0.5em;
+            overflow: auto;
+            position: relative;
+            z-index: 100;
+        }
+
+        .file {
+            & {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                border-bottom: 2px solid rgba(255, 255, 255, .3);
+                user-select: none;
+            }
+
+            &:hover {
+                background-color: rgb(42, 99, 255);
+            }
+
+            & > div {
+                height: 2em;
+                line-height: 2em;
+                margin: 0.2em 0;
+            }
+
+            input {
+                width: 100%;
+                height: 2em;
+                line-height: 2em;
+                border-bottom: 0.2em solid #000;
+                background-color: transparent;
+                color: #fff;
+                border: 0;
+            }
+
+            .icon {
+                width: 2em;
+                text-align: center;
+            }
+
+            .name {
+                flex-grow: 1;
+            }
+
+            .type {
+                width: 7em;
+                border-left: 1px solid rgba(255, 255, 255, .1);
+                border-right: 1px solid rgba(255, 255, 255, .1);
+                text-align: center;
+            }
+
+            .last-modify {
+                font-family: 'Lato', sans-serif;
+                padding: 0 1em;
+                height: 2.5em;
+                line-height: 2.5em;
+                font-size: 0.8em;
+                width: 12em;
+            }
+
+            .size {
+                font-family: 'Lato', sans-serif;
+                font-weight: 700;
+                padding: 0 1em;
+                height: 2.5em;
+                line-height: 2.5em;
+                font-size: 0.8em;
+                width: 6em;
+            }
+        }
+    }
+
+    .window {
+        & {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        .fog {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(0, 0, 0);
+            opacity: 0;
+            transition: 0.1s opacity ease-in-out;
+            z-index: 95;
+        }
+
+        .fog-visible {
+            opacity: 0.4;
+            z-index: 105;
+        }
+
+        & > div:not(:first-child) {
+            position: relative;
+            z-index: 200;
+            margin: 1em auto;
+        }
+    }
+
+    .context-menu {
+        & {
+            position: absolute;
+            width: 9em;
+            background-color: #fff;
+            border: 0.2em double #000;
+            padding: 0.5em;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            z-index: 1000;
+        }
+
+        li {
+            display: block;
+            height: 2em;
+            line-height: 2em;
+            border-bottom: 1px solid rgba(0, 0, 0, .3);
+            color: #000;
+            padding: 0 0.3em;
+            cursor: pointer;
+        }
+
+        li:hover {
+            background-color: rgb(235, 235, 235);
+        }
+
+        .fog {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 300;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.add-section {
+    text-align: center;
+    width: 19em;
+    margin: 1em auto;
+    background-color: rgb(30, 76, 204);
+}
+
+.add-section .desc {
+    background-color: rgb(11, 13, 26);
+}
+
+.add-section .block {
+    border-top: 0.2em solid #fff;
+    display: inline-block;
+    margin: 1em 0.5em;
+    width: 8em;
+    height: 4em;
+    line-height: 4em;
+    background-color: rgb(15, 15, 15);
+    cursor: pointer;
+}

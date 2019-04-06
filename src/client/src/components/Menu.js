@@ -8,41 +8,30 @@ class Menu extends Component {
     render() {
         return (
             <nav className={ this.props.loading ? "loading" : "loaded"}>
-                { this.props.loading && <i className="fas fa-spinner loading-icon" /> }
                 <div>MENU</div>
                 <div className="kek" />
+                { this.props.loading && <i className="fas fa-spinner loading-icon" /> }
                 <ul>
                     <li className="submenu">
                         NOTATKI
                     </li>
+                    
                     <li>
-                        <Link to="/open">
-                            <div className="menu-item clearfix active">
-                                <div>Utwórz notatkę</div>
-                                <div className="icon">
-                                    <i className="fas fa-plus" />
-                                </div>
-                            </div>
+                        <Link to="/create">
+                            <span>Utwórz notatkę</span>
+                            <i className="fas fa-plus" />
                         </Link>
                     </li>
                     <li>
                         <Link to="/edit">
-                            <div className="menu-item clearfix">
-                                <div>Edytuj notatkę</div>
-                                <div className="icon">
-                                    <i className="far fa-file-alt" />
-                                </div>
-                            </div>
+                            <span>Edytuj notatkę</span>
+                            <i className="far fa-file-alt" />
                         </Link>
                     </li>
                     <li>
                         <Link to="/open">
-                            <div className="menu-item clearfix">
-                                <div>Otwórz notatkę</div>
-                                <div className="icon">
-                                    <i className="far fa-edit" />
-                                </div>
-                            </div>
+                            <span>Otwórz notatkę</span>
+                            <i className="far fa-edit" />
                         </Link>
                     </li>
                     <li className="submenu">
@@ -51,12 +40,8 @@ class Menu extends Component {
                     { !this.props.logged ?
                         <li>
                             <a href="http://localhost:5000/api/login">
-                                <div className="menu-item clearfix">
-                                    <div>Zaloguj się</div>
-                                    <div className="icon">
-                                        <i className="fab fa-dropbox" />
-                                    </div>
-                                </div>
+                                <span>Zaloguj się</span>
+                                <i className="fab fa-dropbox" />
                             </a>
                         </li> :
                         <React.Fragment>
@@ -70,59 +55,38 @@ class Menu extends Component {
                                 </div>
                             </li>
                             <li>
-                                <Link to="/open">
-                                    <div className="menu-item clearfix">
-                                        <div>Przeglądaj</div>
-                                        <div className="icon">
-                                            <i className="far fa-folder-open" />
-                                        </div>
-                                    </div>
+                                <Link to="/overview">
+                                    <span>Przeglądaj</span>
+                                    <i className="far fa-folder-open" />  
                                 </Link>
                             </li>
                             <li>
                                 <Link to="/open">
-                                    <div className="menu-item clearfix">
-                                        <div>Informacje</div>
-                                        <div className="icon">
-                                            <i className="far fa-chart-bar" />
-                                        </div>
-                                    </div>
+                                    <span>Informacje</span>
+                                    <i className="far fa-chart-bar" />
                                 </Link>
                             </li>
                             <li>
                                 <Link to="/open">
-                                    <div className="menu-item clearfix">
-                                        <div>Wyloguj</div>
-                                        <div className="icon">
-                                            <i className="fas fa-sign-out-alt" />
-                                        </div>
-                                    </div>
+                                    <span>Wyloguj</span>
+                                    <i className="fas fa-sign-out-alt" />
                                 </Link>
                             </li>
                         </React.Fragment>
                     }
-                    
                     <li className="submenu">
                         INNE
                     </li>
                     <li>
                         <Link to="/guide">
-                            <div className="menu-item clearfix">
-                                <div>Przewodnik</div>
-                                <div className="icon">
-                                    <i className="fas fa-atlas" />
-                                </div>
-                            </div>
+                            <span>Przewodnik</span>
+                            <i className="fas fa-atlas" />
                         </Link>
                     </li>
                     <li>
                         <Link to="/other">
-                            <div className="menu-item clearfix">
-                                <div>Inne projekty</div>
-                                <div className="icon">
-                                    <i className="fas fa-users" />
-                                </div>
-                            </div>
+                            <span>Inne projekty</span>
+                            <i className="fas fa-users" />
                         </Link>
                     </li>
                 </ul>

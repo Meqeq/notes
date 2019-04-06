@@ -1,0 +1,33 @@
+@import './variables.scss';
+
+.open-menu {
+    & {
+        background-color: $blue-color;
+        width: 20em;
+        margin: auto;
+        text-align: center;
+    }
+
+    .option {
+        & {
+            float: left;
+            width: 10em;
+            padding: 0.5em;
+        }
+
+        &:hover {
+            background-color: $light-color;
+        }
+
+        i {
+            font-size: 1.5em;
+        }
+    }
+
+    .desc {
+        clear: both;
+        background-color: $menu-color;
+        height: 2em;
+        line-height: 2em;
+    }
+}

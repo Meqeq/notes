@@ -50,6 +50,9 @@ router.get("/callback", async (req, res) => {
 });
 
 router.get("/logged", dc.logged);
+router.post("/files", dc.getFileList);
+router.post("/create_cat", dc.createCatalog);
+router.post("/delete", dc.delete);
 
 
 module.exports = router;

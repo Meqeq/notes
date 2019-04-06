@@ -2,21 +2,22 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { close } from '../actions/windowActions';
 
-import DropboxLogin from './DropboxLogin';
-
 import '../styles/window.css';
+import Download from './Download';
 
 class Window extends Component {
     chooseComponent() {
         switch(this.props.component) {
-            case "dropboxLogin":
-                return(<DropboxLogin />);
+            case "download":
+                console.log("Zdzisłąw Onderka nie ma pleców");
+                return(<Download />);
             default:
                 return "";
         }
     }
 
     render() {
+        if(!this.props.open) return ("");
         return (
             <div className="window">
                 <div className="fog" onClick={ () => this.props.closeAction() } />
@@ -27,7 +28,8 @@ class Window extends Component {
 }
 
 const mapStateToProps = state => ({
-
+    component: state.window.component,
+    open: state.window.open
 });
 
 const mapActionsToProps = { 
