@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import '../styles/menu.css';
-
 class Menu extends Component {
     render() {
         return (
@@ -39,7 +37,7 @@ class Menu extends Component {
                     </li>
                     { !this.props.logged ?
                         <li>
-                            <a href="http://localhost:5000/api/login">
+                            <a href={ "http://localhost:5000/api/login?app="+window.location.href }>
                                 <span>Zaloguj się</span>
                                 <i className="fab fa-dropbox" />
                             </a>

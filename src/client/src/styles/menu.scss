@@ -1,0 +1,125 @@
+nav {
+    & {
+        padding: 0.8em 1em;
+        position: fixed;
+        z-index: 900;
+        left: -8.5em;
+        top: 0;
+        width: 13em;
+        height: 100vh;
+        padding-top: 3em;
+        background-color: $menu-color;
+        transition: 0.3s left ease-in-out;
+    }
+
+    & > div:first-of-type {
+        border-bottom: 0.3em double #fff;
+        padding-right: 2em;
+        margin-bottom: 0.7em;
+        display: inline-block;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    a {
+        & {
+            display: block;
+            height: 2em;
+            line-height: 2em;
+            margin: 0.3em 0;
+            cursor: auto;
+            color: #fff;
+        }
+
+        &:hover {
+            color: #e2e2e2;
+            cursor: pointer;
+        }
+
+        span {
+            display: inline-block;
+            width: 8em;
+        }
+
+        i {
+            display: inline-block;
+            width: 2.14em;
+            text-align: center;
+            font-size: 1.4em;
+            border-right: 0.14em solid transparent;
+        }
+    }
+
+    .submenu {
+        font-weight: 200;
+        margin: 0.3em 0;
+        border-bottom: 0.1em solid rgba(255, 255, 255, .1);
+        width: 7.5em;
+    }
+
+    .dropbox-account {
+        & {
+            line-height: 1;
+        }
+
+        .name {
+            font-size: 0.8em;
+        }
+
+        .display-name {
+            font-size: 0.6em;
+        }
+    }
+
+    .kek {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 3.5em;
+        height: 100%;
+        z-index: 50;
+        transition: 0.05s z-index ease-in-out;
+    }
+
+    &:hover .kek {
+        z-index: -1;
+    }
+}
+
+.loaded:hover {
+    left: 0;
+}
+
+.loaded .active i {
+    border-right-color: rgb(30, 76, 204);
+}
+
+.menu-item i {
+    font-size: 1.2em;
+}
+
+.loading a{
+    color: $menu-color;
+}
+
+@keyframes loading{
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-icon {
+    color: #fff;
+    position: absolute;
+    right: 0.5em;
+    top: 0.5em;
+    font-size: 2em;
+    animation: loading 1s ease-in-out infinite;
+}
+

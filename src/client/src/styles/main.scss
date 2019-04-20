@@ -1,0 +1,86 @@
+$header-color: #0f0f0f;
+$menu-color: #0b0d1a;
+$blue-color: #1e4ccc;
+$light-color: #2A63ff;
+$main-color: #1f1f1f;
+
+@import './menu';
+@import './filesExplorer.scss';
+
+html {
+    font-size: 12px;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: $main-color;
+    color: #fff;
+}
+
+#root {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 4.5em 1fr;
+    grid-template-rows: 3em 1fr 1.5em;
+    grid-template-areas:  
+        "header header"
+        ". main"
+        "footer footer";
+}
+
+header {
+    & {
+        grid-area: header;
+        background-color: $header-color;
+        text-align: center;
+        padding-left: 4.5em;
+    }
+
+    span {
+        & {
+            font-weight: 200;
+            display: block;
+            font-size: 2em;
+        }
+
+        &::first-letter {
+            color: $blue-color;
+        }
+    }
+}
+
+main {
+    grid-area: main;
+    padding: 1em;
+}
+
+footer {
+    grid-area: footer;
+    background-color: $header-color;
+    text-align: center;
+    padding-left: 4.5em;
+}
+
+@media (min-width: 575px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 767px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 991px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1199px) {
+    html {
+        font-size: 20px;
+    }
+}

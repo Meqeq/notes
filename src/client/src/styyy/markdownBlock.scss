@@ -1,0 +1,28 @@
+.markdown-block {
+    table {
+        border: 0.1em solid #000;
+        margin: 1em 0.5em;
+    }
+
+    td,th {
+        border: 0.1em solid #000;
+        padding: 0.3em;
+    }
+
+    thead {
+        background-color: rgb(100, 100, 100);
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: rgb(61, 61, 61);
+    }
+
+    tbody tr:nth-child(odd) {
+        background-color: rgb(37, 37, 37);
+    }
+
+    code {
+        background-color: #3b3b3b;
+        padding: 0.2em;
+    }
+}

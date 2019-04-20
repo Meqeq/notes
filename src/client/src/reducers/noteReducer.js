@@ -1,4 +1,4 @@
-import { ADD_BLOCK, CHANGE, DELETE, CHANGE_ORDER, CREATE_JSON } from '../actions/noteActions';
+import { ADD_BLOCK, CHANGE, DELETE, CHANGE_ORDER, CREATE_JSON, OPEN_NOTE, CLEAN } from '../actions/noteActions';
 
 const initialState = {
     title: "",
@@ -41,6 +41,10 @@ export default ( state = initialState, { type, payload } ) => {
                 ...state,
                 json: new Buffer(JSON.stringify({ ...state, json: "" })).toString("base64")
             }
+        case CLEAN:
+            return initialState;
+        case OPEN_NOTE:
+            return payload
         default: 
             return state;
     }

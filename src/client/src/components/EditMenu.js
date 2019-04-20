@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addBlock, createJson } from '../actions/noteActions';
+import { open } from '../actions/windowActions';
 
 import '../styles/savesection.css';
 
@@ -23,7 +24,7 @@ class EditMenu extends Component {
                     <br />
                     <span>KOMPUTER</span>
                 </div>
-                <div className="option">
+                <div className="option" onClick={ () => this.props.openWindow("dropbox-saver")}>
                     <i className="fab fa-dropbox" />
                     <br />
                     <span>DROPBOX</span>
@@ -43,7 +44,8 @@ const mapStateToProps = state => ({});
 
 const mapActionsToProps = {
     addNewBlock: addBlock,
-    onCreateJson: createJson
+    onCreateJson: createJson,
+    openWindow: open
 }
   
 export default connect(mapStateToProps, mapActionsToProps)(EditMenu);

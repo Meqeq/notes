@@ -7,7 +7,7 @@ import EditMenu from '../components/EditMenu';
 class Create extends Component {
     render() {
         return (
-            <div className="create">
+            <React.Fragment>
                 { this.props.blocks.map( (element, key) => {
                     switch(element.type) {
                         case "markdown":
@@ -16,9 +16,9 @@ class Create extends Component {
                             return <div />;
                     }
                 })}
-                
+    
                 <EditMenu />
-            </div>
+            </React.Fragment>
         )
     }
 }

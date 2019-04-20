@@ -1,11 +1,28 @@
 import React from 'react';
 
 export const Error = props => {
-    if(!props.error) return null;
+    if(!props.msg) return null;
 
     return(
-        <div className="error">Wystąpił błąd</div>
+        <div className="error">
+            <strong>Wystąpił błąd</strong>
+            <i className="fas fa-exclamation" />
+            <hr />
+            <span>{ props.msg }</span>
+        </div>
     );
+}
+
+export const Complete = props => {
+    if(!props.msg) return null;
+
+    return(
+        <div className="good">
+            <strong>Udało się</strong>
+            <hr />
+            <span>{ props.msg }</span>
+        </div>
+    )
 }
 
 export const Loading = props => {
@@ -54,7 +71,7 @@ export const File = props => {
                         { (new Date(date)).toLocaleString() }
                     </div>
                     <div className="size">
-                        { size } KB
+                        { Math.ceil(size / 1024) } KB
                     </div>
                 </div>
             )
@@ -66,13 +83,10 @@ export const File = props => {
 export const ContextMenu = props => {
     if(!props.open) return null;
 
-    let { top, left, close, mode } = props;
+    let { top, left, mode } = props;
 
     return(
         <div className="context-menu" style={{ top, left }} >
-            <div className="fog" onClick={ () => close() }
-                onContextMenu={ e => { e.preventDefault(); close() } }
-            />
             <ul>
                 <li onClick={ () => props.openAction(props.elem) }>Otwórz</li>
                 <li>Zmień nazwę</li>
@@ -91,7 +105,7 @@ export const ContextMenu = props => {
 
 export const Window = props => {
     return(
-        <div className="window">
+        <div className={ props.open ? "window" : "window close" }>
             <div className={ props.open ? "fog fog-visible" : "fog" } 
                 onClick={ () => props.close() }
             />
@@ -123,6 +137,15 @@ export const Delete = props => {
             <div className="complete" onClick={ () => props.delete() }>
                 Potwierdź
             </div>
+        </div>
+    );
+}
+
+export const Saver = props => {
+    return(
+        <div className="saver">
+            <input type="text" placeholder="Podaj nazwę pliku" value={ props.val } onChange={ e => props.change(e) } />
+            <div className="save" onClick={ () => props.save() }>Zapisz</div>
         </div>
     );
 }
