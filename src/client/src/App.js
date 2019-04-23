@@ -9,18 +9,12 @@ import './styles/bootstrap-reboot.min.css';
 import './styles/main.scss';
 
 import Menu from './components/Menu';
+import Create from './pages/Create';
 import Overview from './pages/Overview';
 import Note from './pages/Note';
-/*
-import './styles/layout.css';
-
-
+import Open from './pages/Open';
 import Window from './components/Window';
 
-import Create from './pages/Create';
-import Open from './pages/Open';
-import OpenNote from './pages/OpenNote';
-*/
 class App extends Component {
     componentDidMount() {
         this.props.loginAction();  
@@ -30,6 +24,8 @@ class App extends Component {
         return(
             <Router history={ history }>
                 <React.Fragment>
+                    <Window />
+
                     <header>
                         <span>NOTES</span>
                     </header>
@@ -38,7 +34,9 @@ class App extends Component {
 
                     <main>
                         <Route path="/overview" component={ Overview } />
+                        <Route path="/create" component={ Create } />
                         <Route path="/note" component={ Note } />
+                        <Route path="/open" component={ Open } />
                     </main>
 
                     <footer>Notes by MeqeqWengiel | Krk 2019</footer>
@@ -46,29 +44,6 @@ class App extends Component {
             </Router>
         );
     }
-/*
-    render() {
-        return(
-            <Router history={ history }>
-                <div className="wrapper">
-                    <Window />
-                    <header>
-                        <span>NOTES</span>
-                    </header>
-                    <Menu />
-                    <main>
-                        <Route path="/create" component={ Create } />
-                        <Route path="/overview" component={ Overview } />
-                        <Route path="/open" component={ Open } />
-                        <Route path="/note" component={ OpenNote } />
-                    </main>
-                    <footer>
-                        Notes by MeqeqWengiel | Krk 2019
-                    </footer>
-                </div>
-            </Router>
-        );
-    }*/
 }
 
 const mapStateToProps = state => ({

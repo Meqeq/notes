@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import EditionMenu from '../components/EditionMenu';
 import MarkdownEditor from '../components/MarkdownEditor';
-import EditMenu from '../components/EditMenu';
 
 class Create extends Component {
     render() {
         return (
-            <React.Fragment>
+            <div className="create">
+
                 { this.props.blocks.map( (element, key) => {
                     switch(element.type) {
                         case "markdown":
@@ -16,19 +17,15 @@ class Create extends Component {
                             return <div />;
                     }
                 })}
-    
-                <EditMenu />
-            </React.Fragment>
-        )
+
+                <EditionMenu />
+            </div>
+        );
     }
 }
 
 const mapStateToProps = state => ({
     blocks: state.note.blocks
 });
-
-const mapActionsToProps = {
-    
-}
   
-export default connect(mapStateToProps, mapActionsToProps)(Create);
+export default connect(mapStateToProps)(Create);

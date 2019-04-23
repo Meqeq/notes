@@ -1,0 +1,11 @@
+.note {
+    width: 90%;
+    margin: 2em auto;
+    text-align: justify;
+}
+
+@media(min-width: 991px) {
+    .note {
+        width: 80%;
+    }
+}

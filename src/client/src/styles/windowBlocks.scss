@@ -1,0 +1,82 @@
+.download-menu {
+    & {
+        background-color: $blue-color;
+        width: 20em;
+        margin: calc(50vh - 4em) auto;
+        text-align: center;
+        color: #fff;
+        padding: 0.5em;
+    }
+
+    input {
+        width: 100%;
+        margin: 0.5em 0;
+        height: 2em;
+        line-height: 2em;
+    }
+
+    a {
+        & {
+            display: block;
+            height: 2em;
+            line-height: 2em;
+            background-color: rgb(11, 13, 26);
+            color: #fff;
+        }
+
+        &:hover {
+            background-color: rgb(28, 33, 65);
+            text-decoration: none;
+        }
+    }
+}
+
+.dropbox-saver, .dropbox-opener {
+    & {
+        color: #fff;
+        margin: calc(50vh - 10em) auto;
+        width: 80%;
+    }
+    .files-explorer {
+        width: 100%;
+    }
+}
+
+.not-logged {
+    height: 2em;
+    line-height: 2em;
+    width: 25em;
+    background-color: $blue-color;
+    color: #fff;
+    text-align: center;
+    margin: calc(50vh - 1em) auto;
+}
+
+.opener {
+    & {
+        width: 24em;
+        height: 8em;
+        margin: calc(50vh - 8em) auto;
+        background-color: $light-color;
+        position: relative;
+        z-index: 300;
+        color: #fff;
+        padding: 0.5em;
+        text-align: center;
+    }
+
+    input {
+        display: none;
+
+    }
+
+    label {
+        width: 80%;
+        height: 2em;
+        line-height: 2em;
+        background-color: $menu-color;
+        cursor: pointer;
+        margin: 1em;
+    }
+}
+

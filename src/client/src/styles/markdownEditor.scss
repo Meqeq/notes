@@ -1,0 +1,78 @@
+.markdown-editor {
+    & {
+        text-align: center;
+        margin: 2em 0;
+        border: 0.1em solid rgb(116, 116, 116);
+        border-radius: 0.2em;
+    }
+
+    .desc {
+        background-color: $menu-color;
+        height: 2em;
+        line-height: 2em;
+    }
+
+    .settings {
+        & {
+            height: 3em;
+            padding: 0.5em;
+            background-color: $blue-color;
+        }
+
+        div {
+            &{
+                display: inline-block;
+                font-size: 1.5em;
+                height: 1.33em;
+                line-height: 1.33em;
+                width: 1.33em;
+                background-color: #fff;
+                color: #000;
+                margin: 0 0.5em;
+                border-radius: 0.1em;
+            }
+
+            &:not(:first-child) {
+                cursor: pointer;
+            }
+        }
+
+        .delete i {
+            color: rgb(170, 32, 32);
+        }
+    }
+
+    .editor {
+        & {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            grid-template-rows: 1fr;
+            grid-template-areas:  
+                "text editor";
+            padding: 1em;
+            background-color: $light-color;
+            overflow: hidden;
+            resize: vertical;
+            min-height: 6em;
+        }
+
+        .markdown-block {
+            grid-area: text;
+            overflow: hidden;
+            resize: horizontal;
+            width: calc(50vw - 6.25em);
+            min-width: 4em;
+            max-width: calc(100vw - 12.5em);
+            background-color: $main-color;
+            text-align: left;
+            padding: 1em;
+        }
+
+        textarea {
+            grid-area: editor;
+            resize: none;
+            overflow: auto;
+            border: none;
+        }
+    }
+}

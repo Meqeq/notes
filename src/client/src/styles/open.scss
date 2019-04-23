@@ -1,10 +1,8 @@
-@import './variables.scss';
-
 .open-menu {
     & {
         background-color: $blue-color;
         width: 20em;
-        margin: auto;
+        margin: 1em auto;
         text-align: center;
     }
 

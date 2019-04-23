@@ -72,10 +72,7 @@ export const openNote = (e, history) => dispatch => {
             }
         });
 
-        fr.readAsText(note);
-        //console.log(kek);
-
-        
+        fr.readAsText(note);       
     } catch(e) {
         console.log(e);
     }

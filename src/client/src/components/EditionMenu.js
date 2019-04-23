@@ -3,12 +3,10 @@ import { connect } from 'react-redux';
 import { addBlock, createJson } from '../actions/noteActions';
 import { open } from '../actions/windowActions';
 
-import '../styles/savesection.css';
-
-class EditMenu extends Component {
+class EditionMenu extends Component {
     render() {
         return (
-            <div className="edit-menu">
+            <div className="edition-menu">
                 <div className="option" onClick={ () => this.props.addNewBlock("markdown") }>
                     <i className="fab fa-markdown" />
                     <br />
@@ -48,4 +46,4 @@ const mapActionsToProps = {
     openWindow: open
 }
   
-export default connect(mapStateToProps, mapActionsToProps)(EditMenu);
+export default connect(mapStateToProps, mapActionsToProps)(EditionMenu);

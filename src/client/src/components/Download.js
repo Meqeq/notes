@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import '../styles/download.css';
 
 class Download extends Component {
     constructor(props) {
         super(props);
         this.state = { name: "" }
     }
+
     render() {
         return (
             <div className="download-menu">
@@ -22,8 +22,5 @@ const mapStateToProps = state => ({
     data: state.note.json
 });
 
-const mapActionsToProps = { 
-};
-
-export default connect(mapStateToProps, mapActionsToProps)(Download);
+export default connect(mapStateToProps)(Download);
 

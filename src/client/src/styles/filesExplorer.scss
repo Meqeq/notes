@@ -46,7 +46,7 @@
     .files {
         & {
             max-height: 20em;
-            min-height: 8em;
+            min-height: 12em;
             width: 100%;
             padding: 0.5em;
             overflow: auto;
@@ -245,6 +245,43 @@
             width: 100vw;
             height: 100vh;
             z-index: 200;
+        }
+    }
+
+    .saver {
+        & {
+            background-color: $menu-color;
+            padding: 0.5em;
+            color: #fff;
+            position: relative;
+            z-index: 100;
+        }
+
+        input {
+            width: calc(80% - 0.5em);
+            margin-right: 0.5em;
+            height: 2em;
+            line-height: 2em;
+            padding-left: 0.3em;
+            background-color: rgb(88, 89, 102);
+            border: none;
+            color: #fff;
+        }
+
+        .save {
+            & {
+                width: 20%;
+                display: inline-block;
+                background-color: $blue-color;
+                height: 2em;
+                line-height: 2em;
+                text-align: center;
+                cursor: pointer;
+            }
+            
+            &:hover {
+                background-color: $light-color;
+            }
         }
     }
 }

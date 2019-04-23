@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import marked from 'marked';
 
 import { change, deleteBlock, changeOrder } from '../actions/noteActions';
-
-import '../styles/markdownEditor.css';
+import MarkdownBlock from './MarkdownBlock';
 
 class MarkdownEditor extends Component {
     render() {
@@ -24,15 +22,12 @@ class MarkdownEditor extends Component {
                     </div>
                 </div>
                 <div className="editor">
-                    <div className="text"
-                        dangerouslySetInnerHTML={{ __html: marked(this.props.text[this.props.order].content) }}
-                    ></div>
-                    <div className="input">
-                        <textarea placeholder="Wprowadź tekst"
-                            value={ this.props.text[this.props.order].content } 
-                            onChange={ e => this.props.onChange(this.props.order, e.target.value) }
-                        />
-                    </div>
+                    <MarkdownBlock content={ this.props.text[this.props.order].content } />
+
+                    <textarea placeholder="Wprowadź tekst"
+                        value={ this.props.text[this.props.order].content } 
+                        onChange={ e => this.props.onChange(this.props.order, e.target.value) }
+                    />
                 </div>
             </div>
         )

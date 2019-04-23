@@ -5,7 +5,14 @@ $light-color: #2A63ff;
 $main-color: #1f1f1f;
 
 @import './menu';
-@import './filesExplorer.scss';
+@import './note';
+@import './open';
+@import './window';
+@import './editionMenu';
+@import './windowBlocks';
+@import './filesExplorer';
+@import './markdownBlock';
+@import './markdownEditor';
 
 html {
     font-size: 12px;

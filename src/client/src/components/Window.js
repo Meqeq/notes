@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { close } from '../actions/windowActions';
 
-import '../styles/window.scss';
 import Download from './Download';
 import OpenFromComputer from './OpenFromComputer';
 import OpenFromDropbox from './OpenFromDropbox';
@@ -13,14 +12,17 @@ class Window extends Component {
         console.log(this.props.component);
         switch(this.props.component) {
             case "download":
-                //console.log("Zdzisłąw Onderka nie ma pleców");
                 return(<Download />);
             case "open-computer":
                 return(<OpenFromComputer />);
             case "open-dropbox":
-                return(<OpenFromDropbox />);
+                if(this.props.logged)
+                    return(<OpenFromDropbox />);
+                return(<div className="not-logged">Najpierw zaloguj się na swoje konto dropbox</div>);
             case "dropbox-saver":
-                return(<SaveDropbox />);
+                if(this.props.logged)
+                    return(<SaveDropbox />);
+                return(<div className="not-logged">Najpierw zaloguj się na swoje konto dropbox</div>);
             default:
                 return "";
         }
@@ -39,7 +41,8 @@ class Window extends Component {
 
 const mapStateToProps = state => ({
     component: state.window.component,
-    open: state.window.open
+    open: state.window.open,
+    logged: state.user.logged
 });
 
 const mapActionsToProps = { 

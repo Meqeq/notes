@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import { openNote } from '../actions/noteActions';
 import history from '../history';
 
-import '../styles/openComputer.scss';
-
 class OpenFromComputer extends Component {
     change(e) {
         this.props.open(e, history)
@@ -22,8 +20,7 @@ class OpenFromComputer extends Component {
     }
 }
 
-const mapStateToProps = state => ({
-});
+const mapStateToProps = state => ({});
 
 const mapActionsToProps = { 
     open: openNote
