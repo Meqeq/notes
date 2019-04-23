@@ -91,16 +91,12 @@ exports.logged = async (req, res) => {
 exports.isAuth = async ( req, res, next ) => {
     try {
         if(typeof req.session.token === "undefined") throw new ApiError(401, "Musisz zalogować się na swoje konto Dropbox, aby skorzystać z tej funkcji");
-        //console.log(req.session.token);
         next();
     } catch(e) {
-        req.session.token = "JD4f5lB5fNAAAAAAAAAF7i0Ns9BhiOowaO2F883yh5yiTdYy92Wy78ho5OYhgPDk";
-        next();
-        /*
         console.log("Error: " + e.message + " /isAuth");
         res.status(e.statusCode).json({
             error: e.message
-        });*/
+        });
     }
 }
 
