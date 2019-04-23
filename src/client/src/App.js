@@ -39,7 +39,7 @@ class App extends Component {
                         <Route path="/open" component={ Open } />
                     </main>
 
-                    <footer>Notes by MeqeqWengiel | Krk 2019</footer>
+                    <footer>Notes by Meqeq | Krk 2019</footer>
                 </React.Fragment>
             </Router>
         );
